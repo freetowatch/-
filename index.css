@@ -15,11 +15,11 @@ html, body {
     transition: 5s;
 }
  
-.twenty4{
-  text-align: right;
-  font-size: larger;
-  color: lightskyblue;
-  transform: translate(-80%, -80%);
+.twenty4 {
+    text-align: right;
+    font-size: larger;
+    color: lightskyblue;
+    transform: translate(-80%, -80%);
 }
 
 .nav {
@@ -48,24 +48,24 @@ h2 {
   
 .content {
     position: absolute;
-    top: 50%;
+    top: 30%; /* Adjusted top value */
     left: 50%;
     color: #f5f5f5;
     transform: translate(-50%, -50%);
     text-transform: uppercase;
     font-size: large;
 }
-  
+
 .content2 {
     position: absolute;
-    top: 60%;
+    top: 40%; /* Adjusted top value */
     left: 50%;
     color: #f5f5f5;
     transform: translate(-50%, -50%);
     text-transform: uppercase;
 }
   
-.content3 h4{
+.content3 h4 {
     position: absolute;
     top: 22;
     left: 50%;
@@ -98,7 +98,7 @@ h2 {
 
 .trail {
     position: absolute;
-    top: 30%;
+    top: 20%; /* Adjusted top value */
     left: 50%;
     display: inline-flex;
     align-items: center;
@@ -110,7 +110,7 @@ h2 {
     cursor: pointer;
 }
 
-.trailer{
+.trailer {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -126,18 +126,18 @@ h2 {
     opacity: 0;
 }
 
-.trailer.active{
+.trailer.active {
     visibility: visible;
     opacity: 1;
 }
 
-.trailer video{
+.trailer video {
     max-width: 900px;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
     border: 0.1rem solid rgb(255, 255, 255);
 }
 
-.close{
+.close {
     position: absolute;
     top: 10px;
     right: 103px;
@@ -146,13 +146,8 @@ h2 {
     width: 32px;
 }
 
-.ntent img{
-    margin-right: 10px;
-    max-width: 30px;
-}
-  
 .search-bar {
-    top: 50%;
+    top: 40%; /* Adjusted top value */
     left: 50%;
     width: 300px;
     padding: 10px;
@@ -241,8 +236,15 @@ h2 {
     padding: 20px;
 }
 
-@media (max-width: 991px){
-    header{
+.ads-container {
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px; /* Adjust this value based on your preference */
+}
+
+@media (max-width: 991px) {
+    header {
         padding: 20px 50px;
         flex-direction: column;
     }
@@ -252,52 +254,52 @@ h2 {
         flex-wrap: wrap;
         margin: 10px 0;
     }
-    .trailer{
+    .trailer {
         max-width: 120%;
     }
-    .content{
+    .content {
         transform: translate(-100%, -100%);
         top: 0320px;
     }
-   .trailer video{
+    .trailer video {
         max-width: 400px;
-   }
-   .twenty4{
-    transform: translate(-10%, -10%);
-   }
-   .trail img{
-    transform: translate(10%, -00%);
-   }
-   .trail{
-    transform: translate(-10%, -10%);
-    top: 0111px;
-   }
-   .close{
-    top: 140px;
-    right: 40px;
-   }
-   .logo img{
-    transform: translate(-20%, -14%);
-   }
-   .nav li {
-    margin-top: 100px;
-    float: left;
-   }
-.content2{
-    margin-top: 10px;
-    top: 011px;
-    right: px;
-    color:#f5f5f5;
-   }
-   .release li a {
-    position: absolute;
-    text-decoration: none;
-    font-weight: bold;
-    letter-spacing: 1px;
-    color: lightskyblue;
-    text-transform: uppercase;
-    transform: translate(-20%, -40%);
-    top: 50%;
-    left: 70%;  
+    }
+    .twenty4 {
+        transform: translate(-10%, -10%);
+    }
+    .trail img {
+        transform: translate(10%, -00%);
+    }
+    .trail {
+        transform: translate(-10%, -10%);
+        top: 0111px;
+    }
+    .close {
+        top: 140px;
+        right: 40px;
+    }
+    .logo img {
+        transform: translate(-20%, -14%);
+    }
+    .nav li {
+        margin-top: 100px;
+        float: left;
+    }
+    .content2 {
+        margin-top: 10px;
+        top: 0500px;
+        right: px;
+        color:#f5f5f5;
+    }
+    .release li a {
+        position: absolute;
+        text-decoration: none;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: lightskyblue;
+        text-transform: uppercase;
+        transform: translate(-20%, -40%);
+        top: 50%;
+        left: 70%;  
     }
 }
