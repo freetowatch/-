@@ -92,7 +92,7 @@ h2 {
     color: white;
     transform: translate(-70%, -70%);
     text-transform: uppercase;
-    top: 25%;
+    top: 15%;
     left: 70%;  
 }
 
@@ -234,13 +234,6 @@ h2 {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-}
-
-.ads-container {
-    max-width: 100%;
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 20px; /* Adjust this value based on your preference */
 }
 
 @media (max-width: 991px) {
