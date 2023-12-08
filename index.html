@@ -1012,7 +1012,7 @@
         media_type: "Movie"
       },
     ];
-
+    
     async function fetchMoviesFromAPI(searchTerm) {
       try {
         const fullApiUrl = `${apiUrl}search/movie?query=${searchTerm}&api_key=${apiKey}`;
@@ -1029,34 +1029,49 @@
     }
 
     async function filterMovies() {
-  const searchTerm = document.getElementById("searchInput").value;
-  const movieList = document.getElementById("movieList");
-  movieList.innerHTML = "";
+      const searchTerm = document.getElementById("searchInput").value;
+      const movieList = document.getElementById("movieList");
+      movieList.innerHTML = "";
 
-  const matchingMovies = moviesWithDownloadLinks.filter((movie) =>
-    movie.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+      // Combine movies and ad codes
+      const combinedItems = [...moviesWithDownloadLinks, '<div data-mndazid="65639e99-2d30-499a-8ce1-e08bb45c9c61"></div>'];
 
-  if (matchingMovies.length > 0) {
-    matchingMovies.forEach((movieData) => {
-        const movieDetailsURL = `movie_details.html?title=${encodeURIComponent(movieData.title)}&description=${encodeURIComponent(movieData.description)}&download=${encodeURIComponent(movieData.download)}&poster=${encodeURIComponent(movieData.posterURL)}&year=${encodeURIComponent(movieData.release_date)}&downloadLink=${encodeURIComponent(movieData.downloadLink)}`;
-      movieList.innerHTML += `
-        <div class="movie">
-          <h2>Title: ${movieData.title}</h2>
-          <p>Year: ${movieData.release_date}</p>
-          <p>Type: ${movieData.media_type}</p>
-          <p>Description: ${movieData.description}</p>
-          <p>Download: ${movieData.download}</p>
-         <a class="more-info-button" href="${movieDetailsURL}" target="_blank">More Info</a>
-          <img src="${movieData.posterURL}" alt="${movieData.title} Poster">
-        </div>
-      `;
-    });
-  } else {
-    movieList.innerHTML ="<p>No results found.</p>";
+      const matchingItems = combinedItems.filter((item) => {
+        if (typeof item === "object" && item.media_type === "Movie") {
+          return item.title.toLowerCase().includes(searchTerm.toLowerCase());
+        } else if (typeof item === "string") {
+          return true; // Always include ad codes
+        }
+        return false;
+      });
+
+      if (matchingItems.length > 0) {
+        matchingItems.forEach((item) => {
+          if (typeof item === "object" && item.media_type === "Movie") {
+            // Movie item
+            const movieDetailsURL = `movie_details.html?title=${encodeURIComponent(item.title)}&description=${encodeURIComponent(item.description)}&download=${encodeURIComponent(item.download)}&poster=${encodeURIComponent(item.posterURL)}&year=${encodeURIComponent(item.release_date)}&downloadLink=${encodeURIComponent(item.downloadLink)}`;
+            movieList.innerHTML += `
+              <div class="movie">
+                <h2>Title: ${item.title}</h2>
+                <p>Year: ${item.release_date}</p>
+                <p>Type: ${item.media_type}</p>
+                <p>Description: ${item.description}</p>
+                <p>Download: ${item.download}</p>
+                <a class="more-info-button" href="${movieDetailsURL}" target="_blank">More Info</a>
+                <img src="${item.posterURL}" alt="${item.title} Poster">
+              </div>
+            `;
+          } else if (typeof item === "string") {
+            // Ad code
+            const adElement = document.createElement("div");
+            adElement.innerHTML = item;
+            movieList.appendChild(adElement);
+          }
+        });
+      } else {
+        movieList.innerHTML = "<p>No results found.</p>";
+      }
     }
-}
   </script>
-</div>
 </body>
-</html>      
+</html>
