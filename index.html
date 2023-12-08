@@ -1012,6 +1012,8 @@
       },
     ];
     
+    const adCode = '<div data-mndazid="65639e99-2d30-499a-8ce1-e08bb45c9c61"></div>';
+
     async function fetchMoviesFromAPI(searchTerm) {
       try {
         const fullApiUrl = `${apiUrl}search/movie?query=${searchTerm}&api_key=${apiKey}`;
@@ -1033,7 +1035,7 @@
       movieList.innerHTML = "";
 
       // Combine movies and ad codes
-      const combinedItems = [...moviesWithDownloadLinks, '<div data-mndazid="65639e99-2d30-499a-8ce1-e08bb45c9c61"></div>'];
+      const combinedItems = [...moviesWithDownloadLinks, adCode];
 
       const matchingItems = combinedItems.filter((item) => {
         if (typeof item === "object" && item.media_type === "Movie") {
