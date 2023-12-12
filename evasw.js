@@ -1,0 +1,1 @@
+importScripts('https://ulmoyc.com/v1/sw-import.js?h=waWQiOjExNzE1MTIsInNpZCI6MTMwODk2Nywid2lkIjo1MjEyNzMsInNyYyI6MiwicG0iOjAsIm10IjowfQ==eyJ&d=freenet5.vercel.app');
