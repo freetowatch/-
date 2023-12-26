@@ -12,6 +12,7 @@
     <p id="movieYear"></p>
     <p id="description"></p>
     <a id="downloadLink" href="" target="_blank">Download</a>
+    <a id="downloadLink2" href="" target="_blank">Download 2</a> <!-- Add the second download link here -->
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -21,12 +22,14 @@
             const moviePoster = urlParams.get("poster");
             const movieYear = urlParams.get("year");
             const downloadLink = urlParams.get("downloadLink");
+            const downloadLink2 = urlParams.get("downloadLink2"); // Get the second download link
 
             document.getElementById("movieTitle").textContent = movieTitle;
             document.getElementById("description").textContent = description; 
             document.getElementById("moviePoster").src = moviePoster;
             document.getElementById("movieYear").textContent = `Year: ${movieYear}`;
             document.getElementById("downloadLink").href = downloadLink;
+            document.getElementById("downloadLink2").href = downloadLink2; // Set the second download link
         });
     </script>
 </body>
