@@ -11,8 +11,7 @@
     <img id="moviePoster" src="" alt="Movie Poster">
     <p id="movieYear"></p>
     <p id="description"></p>
-    <a id="downloadLink" href="" target="_blank">Download 420p</a>
-    <a id="downloadLinktwo" href="" target="_blank">Download 720p</a>
+    <a id="downloadLink" href="" target="_blank">Download CAMRip_720p</a>
     
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -22,14 +21,12 @@
             const moviePoster = urlParams.get("poster");
             const movieYear = urlParams.get("year");
             const downloadLink = urlParams.get("downloadLink");
-            const downloadLinktwo = urlParams.get("downloadLinktwo");
 
             document.getElementById("movieTitle").textContent = movieTitle;
             document.getElementById("description").textContent = description; 
             document.getElementById("moviePoster").src = moviePoster;
             document.getElementById("movieYear").textContent = `Year: ${movieYear}`;
             document.getElementById("downloadLink").href = downloadLink;
-            document.getElementById("downloadLinktwo").href = downloadLinktwo;
         });
     </script>
 </body>
